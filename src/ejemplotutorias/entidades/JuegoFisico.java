@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ejemplotutorias.entidades;
 
 /**
@@ -13,17 +8,27 @@ public class JuegoFisico extends Juego {
 
     private boolean usado;
 
+    //Contructor
     public JuegoFisico(String nombre, Integer precio, Boolean usado) {
         super(nombre, precio);
         this.usado = usado;
     }
 
+    // Heredamos los métodos de nuestra clase padre
     @Override
-    public double vender() {
-        int mitadPrecio = 0;
-        if (usado = true) {
-            mitadPrecio = getPrecio() / 2;
+    public void vender() {
+        if (usado == true) {     
+            System.out.println("El juego se vendió a mitad de precio por: " + getPrecio()/2);
+        } else {
+            System.out.println("El juego se vendió por: " + getPrecio());
         }
-        return mitadPrecio;
     }
+
+    @Override
+    public void jugarNivel() {
+        System.out.println("Se ha jugado el nivel " + getNivel());
+        super.jugarNivel();
+
+    }
+
 }

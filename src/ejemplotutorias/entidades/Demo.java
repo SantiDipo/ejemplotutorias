@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ejemplotutorias.entidades;
 
 import ejemplotutorias.interfaces.Descargable;
@@ -13,10 +8,10 @@ import ejemplotutorias.interfaces.Descargable;
  */
 public class Demo extends Juego implements Descargable {
 
-    private Integer pesoEnMbs;
+    private int pesoEnMbs;
 
-    public Demo(String nombre, Integer precio) {
-        super(nombre, precio = 0);
+    public Demo(String nombre, int pesoEnMbs) {
+        super(nombre, 0);
         this.pesoEnMbs = pesoEnMbs;
     }
 
@@ -26,8 +21,8 @@ public class Demo extends Juego implements Descargable {
     }
 
     @Override
-    public double vender() {
-        return 0.0;
+    public void vender() {
+        System.out.println("Gracias por adquirir su demo ");   
     }
 
     @Override

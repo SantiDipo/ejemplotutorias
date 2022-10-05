@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ejemplotutorias.entidades;
 
 import ejemplotutorias.interfaces.Descargable;
@@ -11,23 +6,30 @@ import ejemplotutorias.interfaces.Descargable;
  *
  * @author Santiago D'Ippolito
  */
-public class JuegoDigital extends Juego implements Descargable{
-    private Integer pesoEnMbs;
+public class JuegoDigital extends Juego implements Descargable {
 
-    public JuegoDigital(String nombre, Integer precio,int pesoEnMbs) {
+    private Integer pesoEnMbs;
+    // Contructor 
+
+    public JuegoDigital(String nombre, Integer precio, int pesoEnMbs) {
         super(nombre, precio);
         this.pesoEnMbs = pesoEnMbs;
     }
-   
 
+    // Heredamos los métodos de nuestra clase padre
     @Override
     public void descargar(int velocidadDeDescarga) {
-        System.out.println("Espere, el Juego se descargará en: " +(this.pesoEnMbs/velocidadDeDescarga)+ " min");
+        System.out.println("Espere, el Juego se descargará en: " + (this.pesoEnMbs / velocidadDeDescarga) + " min");
     }
 
     @Override
-    public double vender() {
-        return getPrecio();
+    public void vender() {
+        System.out.println("El juego se vendió a: " + getPrecio());
     }
-    
+
+    @Override
+    public void jugarNivel() {
+        super.jugarNivel();
+    }
+
 }
